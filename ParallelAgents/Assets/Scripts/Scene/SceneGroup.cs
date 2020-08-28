@@ -5,5 +5,5 @@ using UnityEngine.SceneManagement;
 
 public class SceneGroup : MonoBehaviour
 {
-    public List<string> sceneNames;
+    public List<string> scenePaths;
 }

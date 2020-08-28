@@ -121,6 +121,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &55511067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 55511068}
+  - component: {fileID: 55511069}
+  m_Layer: 0
+  m_Name: Event Handler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &55511068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55511067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1400966332}
+  m_Father: {fileID: 1361827721}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &55511069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55511067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa49ff1e5a09b242ac14c2cb64f4105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 1400966333}
 --- !u!1 &294382595
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +209,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dcf113975777ff48bf62530f7bf1b79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNames: []
+  scenePaths:
+  - Assets/Scenes/Essentials.unity
+  - Assets/Scenes/MainDimension.unity
 --- !u!1 &390985304
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 390985305}
+  - component: {fileID: 390985306}
   m_Layer: 0
   m_Name: Input Handler
   m_TagString: Untagged
@@ -195,6 +243,22 @@ Transform:
   m_Father: {fileID: 1361827721}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &390985306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390985304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92194d52bf93514faf9711718ae369e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jump: 0
+  shift: 0
+  shoot: 0
+  shootPos: {x: 0, y: 0}
 --- !u!1 &1342049574
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,6 +336,7 @@ Transform:
   m_Children:
   - {fileID: 390985305}
   - {fileID: 1342049575}
+  - {fileID: 55511068}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -289,6 +354,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: {fileID: 0}
   input: {fileID: 0}
+  eventHandler: {fileID: 0}
+--- !u!1 &1400966331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1400966332}
+  - component: {fileID: 1400966333}
+  m_Layer: 0
+  m_Name: InputEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1400966332
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400966331}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 55511068}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1400966333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400966331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac62e0ddda38f2439cc3db7e28076fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2028440673
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,6 +441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dcf113975777ff48bf62530f7bf1b79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNames:
-  - Essentials
-  - MainMenu
+  scenePaths:
+  - Assets/Scenes/Essentials.unity
+  - Assets/Scenes/MainMenu.unity

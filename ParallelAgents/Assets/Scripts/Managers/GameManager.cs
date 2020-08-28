@@ -6,17 +6,18 @@ public class GameManager : MonoBehaviour
 {
     public SceneHandler scene;
     public InputHandler input;
-
+    public EventHandler eventHandler;
     private void Awake()
     {
-        scene = GetComponentInChildren<SceneHandler>();
-        input = GetComponentInChildren<InputHandler>();
+        //scene = GetComponentInChildren<SceneHandler>();
+        //input = GetComponentInChildren<InputHandler>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
         scene.LoadMainMenu();
+        
     }
 
     // Update is called once per frame
@@ -25,7 +26,9 @@ public class GameManager : MonoBehaviour
         
     }
 
+    
 
+    
 
     private static GameManager _instance;
     public static GameManager game
