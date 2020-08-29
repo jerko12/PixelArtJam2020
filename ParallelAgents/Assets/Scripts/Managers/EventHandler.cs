@@ -5,6 +5,7 @@ using UnityEngine;
 public class EventHandler : MonoBehaviour
 {
     public InputEvents input;
+    public GameEvents game;
 
     private void Awake()
     {

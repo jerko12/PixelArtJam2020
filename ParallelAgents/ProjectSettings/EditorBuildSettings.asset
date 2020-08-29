@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainDimension.unity
     guid: 8b0a214b8d2a89a4ab76590889c214b0
+  - enabled: 1
+    path: Assets/Scenes/AlternateDimension.unity
+    guid: 3718720b521df0442b2c6a2ffb3331f6
   m_configObjects: {}

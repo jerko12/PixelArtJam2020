@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public SceneHandler scene;
     public InputHandler input;
     public EventHandler eventHandler;
+    public AudioHandler audioHandler;
     private void Awake()
     {
         //scene = GetComponentInChildren<SceneHandler>();

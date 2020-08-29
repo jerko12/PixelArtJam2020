@@ -8,12 +8,47 @@ public class SceneHandler : MonoBehaviour
     public SceneGroup MainMenuSceneGroup;
     public SceneGroup GameSceneGroup;
 
+    public bool inAlternateUniverse;
+    public enum Universe
+    {
+        Main,
+        Neon,
+        Noir,
+        Space
+    }
+
+    public Universe currentUniverse = Universe.Main;
+
 
     private void Awake()
     {
 
         GameManager.game.scene = this;
     }
+
+    public void SwitchUniverse()
+    {
+        //Switch this later on
+        Universe newUniverse = Universe.Main;
+        int randomUniverseIndex = Random.Range(0, 4);
+        switch (randomUniverseIndex)
+        {
+            case 0: newUniverse = Universe.Main; break;
+            case 1: newUniverse = Universe.Neon; break;
+            case 2: newUniverse = Universe.Noir; break;
+            case 3: newUniverse = Universe.Space; break;
+        }
+        
+
+        if (currentUniverse != newUniverse)
+        {
+            GameManager.game.eventHandler.game.BeforeChangeUniverse();
+            currentUniverse = newUniverse;
+            GameManager.game.eventHandler.game.AfterChangeUniverse();
+        }
+    }
+
+    
 
     public void LoadMainMenu()
     {
@@ -25,8 +60,11 @@ public class SceneHandler : MonoBehaviour
     public void LoadGame()
     {
         LoadScenes(GameSceneGroup);
-        UnloadScenes(GameSceneGroup);
+
+        SceneManager.GetSceneAt(3).GetRootGameObjects();
+        
         GameManager.game.eventHandler.input.onJumpEnter -= LoadGame;
+        GameManager.game.eventHandler.input.onJumpEnter += SwitchUniverse;
         
     }
 
@@ -34,7 +72,6 @@ public class SceneHandler : MonoBehaviour
     {
         foreach (string path in sceneGroup.scenePaths)
         {
-            Debug.Log(SceneManager.GetSceneByBuildIndex(SceneUtility.GetBuildIndexByScenePath(path)).path);
             Scene scene = SceneManager.GetSceneByBuildIndex(SceneUtility.GetBuildIndexByScenePath(path));
             if (scene.path == null)
             {
@@ -45,7 +82,6 @@ public class SceneHandler : MonoBehaviour
 
     private void UnloadScenes(SceneGroup sceneGroup)
     {
-        foreach (Scene scene in SceneManager.GetAllScenes()) ;
         for (int sceneIndex = 0; sceneIndex < SceneManager.sceneCount; sceneIndex++)
         {
             bool deleteScene = true;
