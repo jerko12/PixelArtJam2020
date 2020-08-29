@@ -5,6 +5,14 @@ using UnityEngine;
 
 public class InputEvents : MonoBehaviour
 {
+
+    private void Update()
+    {
+        if (GameManager.game.input.jump) { JumpHold(); }
+        if (GameManager.game.input.shift) { ShiftDimensionHold(); }
+        if (GameManager.game.input.shoot) { ShootHold(); }
+    }
+
     // Jump Event
     public event Action onJumpEnter;
     public void JumpEnter()
@@ -41,5 +49,25 @@ public class InputEvents : MonoBehaviour
     public void ShiftDimensionExit()
     {
         onShiftDimensionExit?.Invoke();
+    }
+
+    // Shoot Event
+    public event Action onShootEnter;
+    public void ShootEnter()
+    {
+        onShootEnter?.Invoke();
+    }
+
+    public event Action onShootHold;
+    public void ShootHold()
+    {
+
+        onShootHold?.Invoke();
+    }
+
+    public event Action onShootExit;
+    public void ShootExit()
+    {
+        onShootExit?.Invoke();
     }
 }

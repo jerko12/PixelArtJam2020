@@ -18,13 +18,16 @@ public class SceneHandler : MonoBehaviour
     public void LoadMainMenu()
     {
         LoadScenes(MainMenuSceneGroup);
+        UnloadScenes(MainMenuSceneGroup);
         GameManager.game.eventHandler.input.onJumpEnter += LoadGame;
     }
 
     public void LoadGame()
     {
         LoadScenes(GameSceneGroup);
+        UnloadScenes(GameSceneGroup);
         GameManager.game.eventHandler.input.onJumpEnter -= LoadGame;
+        
     }
 
     private void LoadScenes(SceneGroup sceneGroup)
@@ -36,6 +39,26 @@ public class SceneHandler : MonoBehaviour
             if (scene.path == null)
             {
                 SceneManager.LoadSceneAsync(SceneUtility.GetBuildIndexByScenePath(path), LoadSceneMode.Additive);
+            }
+        }
+    }
+
+    private void UnloadScenes(SceneGroup sceneGroup)
+    {
+        foreach (Scene scene in SceneManager.GetAllScenes()) ;
+        for (int sceneIndex = 0; sceneIndex < SceneManager.sceneCount; sceneIndex++)
+        {
+            bool deleteScene = true;
+            foreach(string path in sceneGroup.scenePaths)
+            {
+                if (SceneManager.GetSceneAt(sceneIndex).name == SceneManager.GetSceneByPath(path).name || SceneManager.GetSceneAt(sceneIndex).name == "Manager")
+                {
+                    deleteScene = false;
+                }
+            }
+            if (deleteScene)
+            {
+                SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(sceneIndex).buildIndex);
             }
         }
     }
