@@ -9,8 +9,8 @@ public class AudioHandler : MonoBehaviour
     {
         GameManager.game.audioHandler = this;
         //Calls Level Music Event
-       
 
+       
     }
 
     private void Start()
@@ -28,10 +28,10 @@ public class AudioHandler : MonoBehaviour
 
         switch (GameManager.game.scene.currentUniverse)
         {
-            case SceneHandler.Universe.Main: LevelMusic.setParameterByName("World", "Base"); break;
-            case SceneHandler.Universe.Neon: LevelMusic.setParameterByName("World", "Neon"); break ;
-            case SceneHandler.Universe.Noir: LevelMusic.setParameterByName("World", "Noir"); break;
-            case SceneHandler.Universe.Space: LevelMusic.setParameterByName("World", "Spaceship"); break;
+            case SceneHandler.Universe.Main: LevelMusic.setParameterByName("World", 0); break;
+            case SceneHandler.Universe.Neon: LevelMusic.setParameterByName("World", 1); break ;
+            case SceneHandler.Universe.Noir: LevelMusic.setParameterByName("World", 2); break;
+            case SceneHandler.Universe.Space: LevelMusic.setParameterByName("World", 3); break;
         }
 
         // Audio switch code here!
