@@ -213,6 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenePaths:
   - Assets/Scenes/Essentials.unity
+  - Assets/Scenes/Gameplay.unity
   - Assets/Scenes/MainDimension.unity
   - Assets/Scenes/AlternateDimension.unity
 --- !u!1 &390985304
