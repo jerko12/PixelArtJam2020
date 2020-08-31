@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{cc2601b3-f6f6-4f7c-a893-3a4967be1b45}">
+		<property name="name">
+			<value>World</value>
+		</property>
+		<relationship name="folder">
+			<destination>{1f29fccc-8790-420b-968b-6679a4c440be}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{4fce2a2a-d5c5-4b2c-8e39-ccd676f85a9a}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{4fce2a2a-d5c5-4b2c-8e39-ccd676f85a9a}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>4</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Base</value>
+			<value>Neon</value>
+			<value>Noir</value>
+			<value>Spaceship</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

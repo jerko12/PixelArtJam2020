@@ -1,0 +1,318 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7120301829705788915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: PAJ_FMOD_Session_Unity/Build/Desktop/Master.bank
+  Name: Master
+  lastModified: 637344154480000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-7047639173138936093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/LargeMonsterStep
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/LargeMonsterStep
+  guid: 25ade66b93a2cc46a3b386a414efa343
+  Banks:
+  - {fileID: 4222170514859640398}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-5601506650701805011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/SmallMonsterDeath
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/SmallMonsterDeath
+  guid: a8b33c950102984e8c3165384cf60d6b
+  Banks:
+  - {fileID: 4222170514859640398}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-2098347938903858965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/PlayerJump
+  m_EditorClassIdentifier: 
+  Path: event:/Player/PlayerJump
+  guid: 0afad7ae46f77e4b8a10ec0915b6d635
+  Banks:
+  - {fileID: 4222170514859640398}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-1037634456648551713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/PlayerDeath
+  m_EditorClassIdentifier: 
+  Path: event:/Player/PlayerDeath
+  guid: bbaef7bc8c67d04eb226293f8d8de6b0
+  Banks:
+  - {fileID: 4222170514859640398}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-198112894809075609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/PlayerStep
+  m_EditorClassIdentifier: 
+  Path: event:/Player/PlayerStep
+  guid: c9cf719b0a46ea44ac6bd5a58b3ea366
+  Banks:
+  - {fileID: 4222170514859640398}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 6490307248372273267}
+  - {fileID: -7120301829705788915}
+  - {fileID: 4222170514859640398}
+  EditorEvents:
+  - {fileID: -2098347938903858965}
+  - {fileID: 1369936050295735323}
+  - {fileID: -7047639173138936093}
+  - {fileID: 2817491823959534570}
+  - {fileID: -5601506650701805011}
+  - {fileID: 1253695270910553076}
+  - {fileID: -1037634456648551713}
+  - {fileID: -198112894809075609}
+  - {fileID: 6111419177302514090}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -7120301829705788915}
+  StringsBanks:
+  - {fileID: 6490307248372273267}
+  stringsBankWriteTime: 637344154480000000
+  cacheVersion: 4
+--- !u!114 &1253695270910553076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/LargeMonsterDeath
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/LargeMonsterDeath
+  guid: b6e2f2757aaa3f4e82962d407571bdb4
+  Banks:
+  - {fileID: 4222170514859640398}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &1369936050295735323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/LevelMusic
+  m_EditorClassIdentifier: 
+  Path: event:/Music/LevelMusic
+  guid: 1487f553dbea6c4aa006f9235d187f01
+  Banks:
+  - {fileID: 4222170514859640398}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 5622580312653069689}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 64056
+--- !u!114 &2817491823959534570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemies/LargeMonsterShoot
+  m_EditorClassIdentifier: 
+  Path: event:/Enemies/LargeMonsterShoot
+  guid: 3480f5a8b4b14140a7aaa6638993e6a0
+  Banks:
+  - {fileID: 4222170514859640398}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &4222170514859640398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/TestBank.bank
+  m_EditorClassIdentifier: 
+  Path: PAJ_FMOD_Session_Unity/Build/Desktop/TestBank.bank
+  Name: TestBank
+  lastModified: 637344154520000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &5622580312653069689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LevelMusic/World
+  m_EditorClassIdentifier: 
+  Name: World
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
+--- !u!114 &6111419177302514090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/MenuMusic
+  m_EditorClassIdentifier: 
+  Path: event:/Music/MenuMusic
+  guid: e5b7f19268c8584fa312ec57ba5f298c
+  Banks:
+  - {fileID: 4222170514859640398}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 80736
+--- !u!114 &6490307248372273267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: PAJ_FMOD_Session_Unity/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  lastModified: 637344154480000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1256
+  - Name: Windows
+    Value: 1256
+  Exists: 1

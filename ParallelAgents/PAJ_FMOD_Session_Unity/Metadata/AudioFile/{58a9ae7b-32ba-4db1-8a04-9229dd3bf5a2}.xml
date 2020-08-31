@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{58a9ae7b-32ba-4db1-8a04-9229dd3bf5a2}">
+		<property name="assetPath">
+			<value>Monsters/StaticLargeMonsterDeath.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.3005208333333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6bd72fa5-f102-4a10-a6a8-779f79aa24aa}</destination>
+		</relationship>
+	</object>
+</objects>

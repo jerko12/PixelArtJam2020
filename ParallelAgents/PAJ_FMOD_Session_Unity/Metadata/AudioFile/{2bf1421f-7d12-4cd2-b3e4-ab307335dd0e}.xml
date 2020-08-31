@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{2bf1421f-7d12-4cd2-b3e4-ab307335dd0e}">
+		<property name="assetPath">
+			<value>Music/PAJ_Noir.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>64</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{6bd72fa5-f102-4a10-a6a8-779f79aa24aa}</destination>
+		</relationship>
+	</object>
+</objects>
