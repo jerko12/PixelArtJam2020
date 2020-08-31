@@ -10,7 +10,7 @@ public class AudioHandler : MonoBehaviour
         GameManager.game.audioHandler = this;
         //Calls Level Music Event
 
-       
+        LevelMusic.start();
     }
 
     private void Start()
