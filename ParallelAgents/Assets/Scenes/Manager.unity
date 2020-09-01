@@ -306,6 +306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 526177095fe94b446bc8604dbea19c7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smallEnemyDeathEvent: event:/Enemies/SmallMonsterDeath
+  playerJumpSoundEvent: event:/Player/PlayerJump
 --- !u!1 &1342049574
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c530ccd4b405847a0ee7084822611f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   scene: {fileID: 0}
   input: {fileID: 0}
   eventHandler: {fileID: 0}
