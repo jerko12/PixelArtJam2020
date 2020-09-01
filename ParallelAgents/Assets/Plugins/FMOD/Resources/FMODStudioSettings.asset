@@ -301,10 +301,11 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Master
+  - Windows/Master
   Banks:
-  - TestBank
+  - Windows/TestBank
   BanksToLoad:
-  - /Users/jessicabuscema/Documents/GitHub/PixelArtJam2020/ParallelAgents/PAJ_FMOD_Session_Unity/Build/Desktop/TestBank.bank
+  - /Users/jessicabuscema/Documents/GitHub/PixelArtJam2020/ParallelAgents/PAJ_FMOD_Session_Unity/Build/Windows/Master.bank
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
   MigratedPlatforms: 0c000000150000000b0000000a00000009000000120000000800000005000000060000000200000001000000
