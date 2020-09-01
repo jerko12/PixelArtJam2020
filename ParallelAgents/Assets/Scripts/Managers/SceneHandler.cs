@@ -60,7 +60,7 @@ public class SceneHandler : MonoBehaviour
     public void LoadGame()
     {
         LoadScenes(GameSceneGroup);
-
+        UnloadScenes(GameSceneGroup);
         SceneManager.GetSceneAt(3).GetRootGameObjects();
         
         GameManager.game.eventHandler.input.onJumpEnter -= LoadGame;
