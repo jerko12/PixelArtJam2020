@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class PlayerState : MonoBehaviour
 {
+    public Player player;
     private void Awake()
     {
+        player = GameManager.game.player;
         AwakeState();
     }
 
     private void Start()
     {
+        
         StartState();
     }
 
@@ -25,6 +28,11 @@ public class PlayerState : MonoBehaviour
     }
 
     public virtual void EnterState()
+    {
+
+    }
+
+    public virtual void StateCheck()
     {
 
     }

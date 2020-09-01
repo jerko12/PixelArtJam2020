@@ -19,6 +19,11 @@ public class RunningState : PlayerState
         base.EnterState();
     }
 
+    public override void StateCheck()
+    {
+        base.StateCheck();
+    }
+
     public override void UpdateState()
     {
         base.UpdateState();

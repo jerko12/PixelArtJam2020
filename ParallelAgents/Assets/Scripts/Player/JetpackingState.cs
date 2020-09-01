@@ -7,6 +7,7 @@ public class JetpackingState : PlayerState
     public override void AwakeState()
     {
         base.AwakeState();
+
     }
 
     public override void StartState()
@@ -17,6 +18,11 @@ public class JetpackingState : PlayerState
     public override void EnterState()
     {
         base.EnterState();
+    }
+
+    public override void StateCheck()
+    {
+        base.StateCheck();
     }
 
     public override void UpdateState()

@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class AudioHandler : MonoBehaviour
 {
+
+    [FMODUnity.EventRef]
+    public string smallEnemyDeathEvent;
+
+    [FMODUnity.EventRef]
+    public string playerJumpSoundEvent;
+
+
+
     FMOD.Studio.EventInstance LevelMusic;
     private void Awake()
     {
@@ -40,4 +49,13 @@ public class AudioHandler : MonoBehaviour
 
     }
 
+    public void PlaySmallEnemyDeathSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShotAttached(smallEnemyDeathEvent, gameObject);
+    }
+
+    public void PlayPlayerJumpSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShotAttached(playerJumpSoundEvent, gameObject);
+    }
 }

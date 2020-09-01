@@ -15,13 +15,13 @@ public class InputHandler : MonoBehaviour
         input = new InputSystem();
 
         input.Player.Jump.performed += ctx => { jump = (ctx.ReadValue<float>() > 0.85f); GameManager.game.eventHandler.input.JumpEnter(); };
-        input.Player.Jump.canceled += ctx => jump = false;
+        input.Player.Jump.canceled += ctx => { jump = false; GameManager.game.eventHandler.input.JumpExit(); };
 
-        input.Player.ShiftDimension.performed += ctx => { shift = (ctx.ReadValue<float>() > 0.85f); };
-        input.Player.ShiftDimension.canceled += ctx => shift = false;
+        input.Player.ShiftDimension.performed += ctx => { shift = (ctx.ReadValue<float>() > 0.85f); GameManager.game.eventHandler.input.ShiftDimensionEnter(); };
+        input.Player.ShiftDimension.canceled += ctx => { shift = false; GameManager.game.eventHandler.input.ShiftDimensionExit(); };
 
-        input.Player.Shoot.performed += ctx => shoot = (ctx.ReadValue<float>() > 0.85f);
-        input.Player.Shoot.canceled += ctx => shoot = false;
+        input.Player.Shoot.performed += ctx => {shoot = (ctx.ReadValue<float>() > 0.85f); GameManager.game.eventHandler.input.ShootEnter(); };
+        input.Player.Shoot.canceled += ctx => { shoot = false; GameManager.game.eventHandler.input.ShootExit(); };
 
         input.Player.ShootLocation.performed += ctx => shootPos = ctx.ReadValue<Vector2>();
         input.Player.ShootLocation.canceled += ctx => shootPos = Vector2.zero;
