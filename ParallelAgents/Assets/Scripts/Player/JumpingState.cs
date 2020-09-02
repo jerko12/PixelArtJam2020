@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class JumpingState : PlayerState
 {
-    public float currentVelocityUp = 0;
+    
 
-
+    /*
     private void Input_onJumpEnter()
     {
         if (player != null)
@@ -16,10 +16,6 @@ public class JumpingState : PlayerState
         StartCoroutine("jumpExitTime");
     }
 
-    private void Input_onJumpHold()
-    {
-        
-    }
 
     private void Input_onJumpExit()
     {
@@ -27,13 +23,10 @@ public class JumpingState : PlayerState
         StopCoroutine("jumpExitTime");
     }
 
-    IEnumerator jumpExitTime()
-    {
+    
+    */
 
-        yield return new WaitForSeconds(player.settings.maxJumpTime);
-        player.canJump = false;
-    }
-
+    private float timer = 0;
 
 
 
@@ -49,6 +42,7 @@ public class JumpingState : PlayerState
     {
         base.StartState();
         player.canJump = false;
+
     }
 
     
@@ -56,11 +50,16 @@ public class JumpingState : PlayerState
     public override void EnterState()
     {
         base.EnterState();
-        GameManager.game.audioHandler.PlayPlayerJumpSound();
-        GameManager.game.eventHandler.input.onJumpEnter += Input_onJumpEnter;
-        GameManager.game.eventHandler.input.onJumpHold += Input_onJumpHold;
-        GameManager.game.eventHandler.input.onJumpExit += Input_onJumpExit;
+        if (player != null)
+        {
+            //player.currentVelocityUp = player.settings.jumpSpeed;
+            player.animator.SetBool("isJumping", true);
+            player.currentVelocityUp = player.settings.jumpSpeed * Time.fixedDeltaTime * player.rigidbody.gravityScale;
+        }
+
+        timer = 0;
     }
+
 
     public override void StateCheck()
     {
@@ -70,34 +69,44 @@ public class JumpingState : PlayerState
     public override void UpdateState()
     {
         base.UpdateState();
-        if(!player.canJump && !player.grounded)
+
+        timer += Time.deltaTime;
+        if(timer >= player.settings.maxJumpTime && player != null)
         {
-            if (currentVelocityUp > 0)
+            player.SwitchState(Player.state.fall);
+        }
+
+        if (!player.canJump && !player.grounded)
+        {
+            if (player.currentVelocityUp > 0)
             {
-                currentVelocityUp -= 1 * Time.deltaTime;
+                player.currentVelocityUp -= 1 * Time.deltaTime;
             }
             else
             {
-                currentVelocityUp -= 2 * Time.deltaTime;
+                player.SwitchState(Player.state.fall);
             }
         }
-
-        if (player.grounded)
-        {
-            currentVelocityUp = 0;
-        }
+        
     }
+
 
     public override void FixedUpdateState()
     {
         base.FixedUpdateState();
+        if (player != null)
+        {
+            player.rigidbody.velocity = new Vector2(0, player.currentVelocityUp);
+        }
     }
 
     public override void ExitState()
     {
         base.ExitState();
-        GameManager.game.eventHandler.input.onJumpEnter -= Input_onJumpEnter;
-        GameManager.game.eventHandler.input.onJumpHold -= Input_onJumpHold;
-        GameManager.game.eventHandler.input.onJumpExit -= Input_onJumpExit;
+        if (player != null)
+        {
+            player.animator.SetBool("isJumping", false);
+        }
+
     }
 }

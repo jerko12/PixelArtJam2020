@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RunningState : PlayerState
 {
+
     public override void AwakeState()
     {
         base.AwakeState();
@@ -16,7 +17,11 @@ public class RunningState : PlayerState
 
     public override void EnterState()
     {
-        base.EnterState();
+        player.canJump = true;
+        if (player != null)
+        {
+            player.animator.SetBool("isRunning", true);
+        }
     }
 
     public override void StateCheck()
@@ -37,5 +42,9 @@ public class RunningState : PlayerState
     public override void ExitState()
     {
         base.ExitState();
+        if (player != null)
+        {
+            player.animator.SetBool("isRunning", false);
+        }
     }
 }

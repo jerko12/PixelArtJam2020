@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JetpackingState : PlayerState
+public class FallingState : PlayerState
 {
     public override void AwakeState()
     {
@@ -20,13 +20,18 @@ public class JetpackingState : PlayerState
         base.EnterState();
         if (player != null)
         {
-            player.animator.SetBool("isJetpacking", true);
+            player.animator.SetBool("isFalling", true);
         }
     }
 
     public override void StateCheck()
     {
-        base.StateCheck();
+        player.grounded = player.IsGrounded();
+        if (player.grounded)
+        {
+            
+            player.SwitchState(Player.state.run);
+        }
     }
 
     public override void UpdateState()
@@ -36,9 +41,11 @@ public class JetpackingState : PlayerState
 
     public override void FixedUpdateState()
     {
+        base.FixedUpdateState();
+
         if (player != null)
         {
-            player.currentVelocityUp = Mathf.Lerp(player.currentVelocityUp, player.settings.jetpackSpeed * Time.fixedDeltaTime * player.rigidbody.gravityScale, player.settings.jetpackSpeedChange * Time.fixedDeltaTime);
+            player.currentVelocityUp = Mathf.Lerp(player.currentVelocityUp, -player.settings.fallSpeed * Time.fixedDeltaTime * player.rigidbody.gravityScale, player.settings.fallSpeedChange * Time.fixedDeltaTime);
             player.rigidbody.velocity = new Vector2(0, player.currentVelocityUp);
         }
     }
@@ -46,9 +53,10 @@ public class JetpackingState : PlayerState
     public override void ExitState()
     {
         base.ExitState();
+
         if (player != null)
         {
-            player.animator.SetBool("isJetpacking", false);
+            player.animator.SetBool("isFalling", false);
         }
     }
 }

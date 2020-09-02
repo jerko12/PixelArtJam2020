@@ -7,13 +7,13 @@ public class PlayerState : MonoBehaviour
     public Player player;
     private void Awake()
     {
-        player = GameManager.game.player;
+       
         AwakeState();
     }
 
     private void Start()
     {
-        
+        player = GameManager.game.player;
         StartState();
     }
 

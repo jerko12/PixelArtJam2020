@@ -16,15 +16,18 @@ public class Player : MonoBehaviour
     public RunningState run;
     public JumpingState jump;
     public JetpackingState jetpack;
+    public FallingState fall;
     public DeadState dead;
 
-    
+    //Hide from inspector later
+    public float currentVelocityUp = 0;
 
     public enum state
     {
         run,
         jump,
         jetpack,
+        fall,
         dead
     }
 
@@ -49,6 +52,7 @@ public class Player : MonoBehaviour
                 case state.run: run.ExitState();break ;
                 case state.jump: jump.ExitState(); break;
                 case state.jetpack: jetpack.ExitState(); break;
+                case state.fall: fall.ExitState(); break;
                 case state.dead: dead.ExitState(); break;
             }
             currentState = newState;
@@ -58,6 +62,7 @@ public class Player : MonoBehaviour
                 case state.run: run.EnterState(); break;
                 case state.jump: jump.EnterState(); break;
                 case state.jetpack: jetpack.EnterState(); break;
+                case state.fall: fall.EnterState();break;
                 case state.dead: dead.EnterState(); break;
             }
         }
@@ -74,20 +79,30 @@ public class Player : MonoBehaviour
         dead = GetComponent<DeadState>();
 
         GameManager.game.eventHandler.input.onJumpEnter += Input_onJumpEnter;
-
-
-
+        GameManager.game.eventHandler.input.onJumpExit += Input_onJumpExit;
         init();
         GameManager.game.player = this;
     }
 
+   
+
     private void Input_onJumpEnter()
     {
-        SwitchState(state.jump);
-        GameManager.game.audioHandler.PlayPlayerJumpSound();
+        if (grounded)
+        {
+            SwitchState(state.jump);
+            GameManager.game.audioHandler.PlayPlayerJumpSound();
+        }
+        else
+        {
+            SwitchState(state.jetpack);
+        }
     }
 
-
+    private void Input_onJumpExit()
+    {
+        SwitchState(state.fall);
+    }
 
 
 
@@ -101,34 +116,39 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        grounded = IsGrounded();
-        if (grounded)
-        {
-            if (!canJump)
-            {
-                canJump = true;
-                SwitchState(state.run);
-            }
-        }
-       
         
-        animator.SetBool("IsJumping", GameManager.game.input.jump);
-        
-        animator.SetBool("IsGrounded", grounded);
-
         switch (currentState)
         {
-            case state.run: ; break;
-            case state.jump:; break;
-            case state.jetpack:; break;
-            case state.dead:; break;
+            case state.run: run.StateCheck(); run.UpdateState(); break;
+            case state.jump: jump.StateCheck(); jump.UpdateState(); break;
+            case state.jetpack: jetpack.StateCheck(); jetpack.UpdateState(); break;
+            case state.fall: fall.StateCheck(); fall.UpdateState(); break;
+            case state.dead: dead.StateCheck(); dead.UpdateState(); break;
         }
 
+
+        
+
+        animator.SetBool("IsGrounded", grounded);
         //animator.SetBool("",GameManager.game.input.);
     }
 
-    
-    bool IsGrounded()
+    void FixedUpdate()
+    {
+        switch (currentState)
+        {
+            case state.run: run.FixedUpdateState();  break;
+            case state.jump: jump.FixedUpdateState(); break;
+            case state.jetpack: jetpack.FixedUpdateState(); break;
+            case state.fall: fall.FixedUpdateState(); break;
+            case state.dead: dead.FixedUpdateState(); break;
+        }
+
+        
+    }
+
+
+    public bool IsGrounded()
     {
         bool isGrounded = false;
         RaycastHit2D hit = Physics2D.Raycast(gameObject.transform.position, Vector2.down,groundCheckDistance,groundCheckLayerMask);
