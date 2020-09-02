@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     {
         if(health <= 0)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
     // Update is called once per frame
@@ -33,6 +33,7 @@ public class Enemy : MonoBehaviour
         }
         if (collision.transform.CompareTag("PlayerBullet"))
         {
+            Debug.Log("EnemyHit");
             health--;
         }
     }
