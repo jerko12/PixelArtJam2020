@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public Player player;
+    public Camera mainCam;
 
     public SceneHandler scene;
     public InputHandler input;
@@ -20,7 +22,15 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         scene.LoadMainMenu();
-        
+
+        GameObject[] EssentialsObjects = SceneManager.GetSceneByName("Essentials").GetRootGameObjects();
+        for(int i = 0; i < EssentialsObjects.Length-1; i++)
+        {
+            if (EssentialsObjects[i].CompareTag("MainCamera"))
+            {
+                mainCam = EssentialsObjects[i].GetComponent<Camera>();
+            }
+        }
     }
 
     // Update is called once per frame

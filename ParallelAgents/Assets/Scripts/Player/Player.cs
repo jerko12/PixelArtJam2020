@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     public bool grounded = false;
     public bool canJump = false;
 
+    public GameObject gunArm;
+
     public RunningState run;
     public JumpingState jump;
     public JetpackingState jetpack;
@@ -144,9 +146,15 @@ public class Player : MonoBehaviour
             case state.dead: dead.FixedUpdateState(); break;
         }
 
+        //gun arm system and shooting
+        gunSystem();
         
     }
 
+    public void gunSystem()
+    {
+        
+    }
 
     public bool IsGrounded()
     {

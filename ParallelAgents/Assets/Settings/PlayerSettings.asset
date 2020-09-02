@@ -15,6 +15,6 @@ MonoBehaviour:
   maxJumpTime: 0.3
   jumpSpeed: 400
   fallSpeed: 400
-  fallSpeedChange: 50
+  fallSpeedChange: 25
   jetpackSpeed: 300
   jetpackSpeedChange: 5

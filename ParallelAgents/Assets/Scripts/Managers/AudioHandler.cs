@@ -51,12 +51,12 @@ public class AudioHandler : MonoBehaviour
 
     public void PlaySmallEnemyDeathSound()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/SmallMonsterDeath", GetComponent<Transform>().Position);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/SmallMonsterDeath", GetComponent<Transform>().position);
     }
 
     public void PlayPlayerJumpSound()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/PlayerJump", GetComponent<Transform>().Position);
-        Print("Jump event Called");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/PlayerJump", GetComponent<Transform>().position);
+        print("Jump event Called");
     }
 }
