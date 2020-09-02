@@ -76,7 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: PAJ_FMOD_Session_Unity/Build/Desktop/Master.bank
   Name: Master
-  lastModified: 637345103005295997
+  lastModified: 637346330940000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: PAJ_FMOD_Session_Unity/Build/Desktop/Windows/TestBank.bank
   Name: Windows/TestBank
-  lastModified: 637345835094908737
+  lastModified: 637346330940000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -253,6 +253,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-1239849428793792458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: PAJ_FMOD_Session_Unity/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  lastModified: 637346330940000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1256
+  - Name: Windows
+    Value: 1256
+  Exists: 1
 --- !u!114 &-1037634456648551713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,6 +298,32 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-540109619881651872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: 
+  guid: d3567da38c9c3047a035fee83c43302d
+  Banks:
+  - {fileID: -366919215932319972}
+  - {fileID: -366919215932319972}
+  - {fileID: -366919215932319972}
+  - {fileID: -366919215932319972}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-366919215932319972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,7 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: PAJ_FMOD_Session_Unity/Build/Desktop/Windows/Master.bank
   Name: Windows/Master
-  lastModified: 637345835094878742
+  lastModified: 637346330940000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -331,9 +379,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -7120301829705788915}
-  - {fileID: -7724379374314602048}
   - {fileID: -366919215932319972}
   - {fileID: -6471675928097869637}
+  - {fileID: -1239849428793792458}
   EditorEvents:
   - {fileID: -2098347938903858965}
   - {fileID: 1369936050295735323}
@@ -344,17 +392,14 @@ MonoBehaviour:
   - {fileID: -1037634456648551713}
   - {fileID: -198112894809075609}
   - {fileID: 6111419177302514090}
-  - {fileID: -6476351668585393677}
-  - {fileID: -2484859555285081510}
-  - {fileID: -4058202322792714452}
-  - {fileID: -8264703390645376842}
+  - {fileID: -540109619881651872}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7120301829705788915}
   - {fileID: -366919215932319972}
   StringsBanks:
-  - {fileID: -7724379374314602048}
-  stringsBankWriteTime: 637345835094898713
+  - {fileID: -1239849428793792458}
+  stringsBankWriteTime: 637346330940000000
   cacheVersion: 4
 --- !u!114 &144557684217237094
 MonoBehaviour:
@@ -416,10 +461,27 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -5415098107950957498}
+  - {fileID: 1444938160138270300}
   MinDistance: 0
   MaxDistance: 0
   Length: 64056
+--- !u!114 &1444938160138270300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LevelMusic/World
+  m_EditorClassIdentifier: 
+  Name: World
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
 --- !u!114 &2817491823959534570
 MonoBehaviour:
   m_ObjectHideFlags: 0

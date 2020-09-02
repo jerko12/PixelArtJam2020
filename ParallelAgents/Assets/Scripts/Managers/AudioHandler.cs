@@ -11,6 +11,7 @@ public class AudioHandler : MonoBehaviour
     [FMODUnity.EventRef]
     public string playerJumpSoundEvent;
 
+    
 
 
     FMOD.Studio.EventInstance LevelMusic;
@@ -49,14 +50,73 @@ public class AudioHandler : MonoBehaviour
 
     }
 
+    //enemy oneshot sound call methods
+
     public void PlaySmallEnemyDeathSound()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/SmallMonsterDeath", GetComponent<Transform>().position);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/SmallMonsterDeath");
+        print("Small enemy death sound event called");
     }
+
+    public void PlayBossMonsterDeathSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/BossMonsterDeath");
+        print("Boss Monster death sound event called");
+    }
+
+    public void PlayBossMonsterShootSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/BossMonsterShoot");
+        print("Boss Monster Shoot sound event called");
+    }
+
+    public void PlayLargeMonsterDeathSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/LargeMonsterDeath");
+        print("LargeMonster death sound event called");
+    }
+
+    public void PlayLargeMonsterShootSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/LargeMonsterShoot");
+        print("LargeMonster shoot sound event called");
+    }
+
+    public void PlayLargeMonsterStepSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemies/LargeMonsterStep");
+        print("LargeMonster step sound event called");
+    }
+
+    //player oneshot sound call methods
 
     public void PlayPlayerJumpSound()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/PlayerJump", GetComponent<Transform>().position);
-        print("Jump event Called");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/PlayerJump");
+        print("Jump sound event Called");
+    }
+
+    public void PlayDimensionJumpSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/DimensionJump");
+        print("Dimension jump sound event Called");
+    }
+
+    public void PlayPlayerDeathSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/PlayerDeath");
+        print("PlayerDeath sound event Called");
+    }
+
+    public void PlayPlayerShootSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/PlayerShoot");
+        print("PlayerShoot sound event Called");
+    }
+
+    public void PlayPlayerStepSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/PlayerStep");
+        print("PlayerStep sound event Called");
     }
 }
