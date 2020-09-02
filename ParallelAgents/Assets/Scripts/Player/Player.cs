@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     public FallingState fall;
     public DeadState dead;
 
+    public int energy;
+
     //Hide from inspector later
     public float currentVelocityUp = 0;
 
@@ -153,7 +155,13 @@ public class Player : MonoBehaviour
 
     public void gunSystem()
     {
-        
+        Vector3 aimPos = GameManager.game.mainCam.ScreenToWorldPoint(new Vector3(GameManager.game.input.shootPos.x, GameManager.game.input.shootPos.y,10));
+        print(aimPos);
+        Vector3 lookDirection = aimPos.normalized - (transform.position +  gunArm.transform.position);
+
+        //float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
+        //gunArm.transform.rotation = Quaternion.LookRotation(lookDirection.normalized);
+        gunArm.transform.LookAt(aimPos, transform.forward);
     }
 
     public bool IsGrounded()
