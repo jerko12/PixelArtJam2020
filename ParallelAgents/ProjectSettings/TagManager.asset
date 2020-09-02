@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Ground
   - Platform
+  - Modern
+  - Alien
+  - Neon
+  - Noir
   layers:
   - Default
   - TransparentFX
