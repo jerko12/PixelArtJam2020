@@ -20,4 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AlternateDimension.unity
     guid: 3718720b521df0442b2c6a2ffb3331f6
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/Gameplay.unity
+    guid: a8d7f04c8fd5ece4a8a0944e2abda9eb
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: fc60503cf18baa94caaa13570018d59f,
+      type: 2}

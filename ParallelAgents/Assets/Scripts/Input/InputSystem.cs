@@ -58,7 +58,7 @@ public class @InputSystem : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard And Mouse"",
+                    ""groups"": """",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -69,7 +69,7 @@ public class @InputSystem : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard And Mouse"",
+                    ""groups"": """",
                     ""action"": ""ShiftDimension"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -80,7 +80,7 @@ public class @InputSystem : IInputActionCollection, IDisposable
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard And Mouse"",
+                    ""groups"": """",
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -91,7 +91,7 @@ public class @InputSystem : IInputActionCollection, IDisposable
                     ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard And Mouse"",
+                    ""groups"": """",
                     ""action"": ""ShootLocation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
