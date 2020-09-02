@@ -4,15 +4,43 @@ using UnityEngine;
 
 public class AudioHandler : MonoBehaviour
 {
+    //monsters event refs
 
     [FMODUnity.EventRef]
     public string smallEnemyDeathEvent;
 
     [FMODUnity.EventRef]
+    public string bossMonsterDeathEvent;
+
+    [FMODUnity.EventRef]
+    public string bossMonsterShootEvent;
+
+    [FMODUnity.EventRef]
+    public string largeMonsterDeathEvent;
+
+    [FMODUnity.EventRef]
+    public string largeMonsterShootEvent;
+
+    [FMODUnity.EventRef]
+    public string largeMonsterStepEvent;
+
+
+    //player events refs
+
+    [FMODUnity.EventRef]
     public string playerJumpSoundEvent;
 
-    
+    [FMODUnity.EventRef]
+    public string dimensionJumpSoundEvent;
 
+    [FMODUnity.EventRef]
+    public string playerDeathSoundEvent;
+
+    [FMODUnity.EventRef]
+    public string playerShootSoundEvent;
+
+    [FMODUnity.EventRef]
+    public string playerStepSoundEvent;
 
     FMOD.Studio.EventInstance LevelMusic;
     private void Awake()
