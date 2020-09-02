@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a8bee5455a3f949b21065d4b9709b2, type: 3}
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
-  maxJumpTime: 0.3
-  jumpSpeed: 400
-  fallSpeed: 400
-  fallSpeedChange: 25
+  maxJumpTime: 0.5
+  jumpSpeed: 200
+  fallSpeed: 250
+  fallSpeedChange: 5
   jetpackSpeed: 300
-  jetpackSpeedChange: 5
+  jetpackSpeedChange: 15

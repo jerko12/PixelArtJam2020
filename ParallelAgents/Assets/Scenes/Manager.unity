@@ -331,7 +331,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smallEnemyDeathEvent: event:/Enemies/SmallMonsterDeath
+  bossMonsterDeathEvent: 
+  bossMonsterShootEvent: 
+  largeMonsterDeathEvent: 
+  largeMonsterShootEvent: 
+  largeMonsterStepEvent: 
   playerJumpSoundEvent: event:/Player/PlayerJump
+  dimensionJumpSoundEvent: 
+  playerDeathSoundEvent: 
+  playerShootSoundEvent: 
+  playerStepSoundEvent: 
 --- !u!1 &1342049574
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,11 @@ public class Player : MonoBehaviour
     public bool grounded = false;
     public bool canJump = false;
 
+    public bool canShoot = true;
+
     public GameObject gunArm;
+    public GameObject gunBarrel;
+    public GameObject bullet;
 
     public RunningState run;
     public JumpingState jump;
@@ -114,6 +118,12 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.game.eventHandler.input.onShootEnter += Input_onShootEnter;
+    }
+
+    private void Input_onShootEnter()
+    {
+        Debug.Log("Shoot");
         
     }
 
@@ -156,12 +166,23 @@ public class Player : MonoBehaviour
     public void gunSystem()
     {
         Vector3 aimPos = GameManager.game.mainCam.ScreenToWorldPoint(new Vector3(GameManager.game.input.shootPos.x, GameManager.game.input.shootPos.y,10));
-        print(aimPos);
+        //print(aimPos);
         Vector3 lookDirection = aimPos.normalized - (transform.position +  gunArm.transform.position);
 
         //float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
         //gunArm.transform.rotation = Quaternion.LookRotation(lookDirection.normalized);
         gunArm.transform.LookAt(aimPos, transform.forward);
+        if (GameManager.game.input.shoot && canShoot)
+        {
+            Instantiate(bullet, gunBarrel.transform.position, gunArm.transform.rotation);
+            canShoot = false;
+        }
+        if(!GameManager.game.input.shoot && !canShoot)
+        {
+            canShoot = true;
+        }
+
+        
     }
 
     public bool IsGrounded()

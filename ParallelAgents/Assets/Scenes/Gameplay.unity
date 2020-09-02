@@ -145,7 +145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 223287512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0363, y: 0.0255, z: 0}
+  m_LocalPosition: {x: -0.0363, y: 0.055, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1286962188}
@@ -489,7 +489,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829461656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2, y: -0.042, z: 0}
+  m_LocalPosition: {x: 0.208, y: -0.042, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 741032249}
@@ -717,7 +717,10 @@ MonoBehaviour:
     m_Bits: 256
   grounded: 0
   canJump: 0
+  canShoot: 1
   gunArm: {fileID: 223287512}
+  gunBarrel: {fileID: 1829461656}
+  bullet: {fileID: 6331243816794598165, guid: f5d5ea886014888438d9301602c361b3, type: 3}
   run: {fileID: 1846761070}
   jump: {fileID: 1846761071}
   jetpack: {fileID: 1846761069}
