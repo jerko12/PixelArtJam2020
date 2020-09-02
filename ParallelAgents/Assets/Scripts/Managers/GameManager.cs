@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public AudioHandler audioHandler;
     private void Awake()
     {
+        scene.LoadMainMenu();
         //scene = GetComponentInChildren<SceneHandler>();
         //input = GetComponentInChildren<InputHandler>();
     }
@@ -21,7 +22,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scene.LoadMainMenu();
+        
 
         GameObject[] EssentialsObjects = SceneManager.GetSceneByName("Essentials").GetRootGameObjects();
         for(int i = 0; i < EssentialsObjects.Length-1; i++)

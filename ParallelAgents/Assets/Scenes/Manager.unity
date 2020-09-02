@@ -216,7 +216,6 @@ MonoBehaviour:
   - Assets/Scenes/Essentials.unity
   - Assets/Scenes/Gameplay.unity
   - Assets/Scenes/MainDimension.unity
-  - Assets/Scenes/AlternateDimension.unity
 --- !u!114 &294382598
 MonoBehaviour:
   m_ObjectHideFlags: 0
